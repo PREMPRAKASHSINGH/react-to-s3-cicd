@@ -15,13 +15,13 @@ pipeline {
         
         stage('install dependencies') {
             steps {
-                sh 'sudo npm install'
+                sh 'npm install'
             }
         }
         
         stage('build app') {
             steps {
-                sh 'sudo npm run build'
+                sh 'npm run build'
             }
         }
         
