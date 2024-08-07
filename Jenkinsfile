@@ -1,24 +1,27 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'node20'
+    }
 
     stages {
         stage('clone repo') {
             steps {
                 script{
-                    git url: 'git@github.com:PREMPRAKASHSINGH/react-to-s3-cicd.git', branch: 'main'
+                    git url: 'https://github.com/PREMPRAKASHSINGH/react-to-s3-cicd.git', branch: 'main'
                 }
             }
         }
         
         stage('install dependencies') {
             steps {
-                sh 'npm install'
+                sh 'sudo npm install'
             }
         }
         
         stage('build app') {
             steps {
-                sh 'npm run build'
+                sh 'sudo npm run build'
             }
         }
         
