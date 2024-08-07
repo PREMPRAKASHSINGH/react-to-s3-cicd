@@ -5,7 +5,7 @@ pipeline {
         stage('clone repo') {
             steps {
                 script{
-                    git 'git@github.com:PREMPRAKASHSINGH/react-to-s3-cicd.git'
+                    git url: 'git@github.com:PREMPRAKASHSINGH/react-to-s3-cicd.git', branch: 'main
                 }
             }
         }
